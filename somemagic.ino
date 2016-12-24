@@ -38,21 +38,36 @@ void loop(void){
   int packetSize = Udp.parsePacket();
   if (packetSize)
   {
-    Serial.printf("Received %d bytes from %s, port %d\n", packetSize, Udp.remoteIP().toString().c_str(), Udp.remotePort());
     int len = Udp.read(incomingPacket, 255);
     if (len > 0)
     {
       incomingPacket[len] = 0;
     }
 
-    if(incomingPacket[0] == 255) {
-      Serial.printf("uhhhh, Magic!");
+    int i = 0;
+
+    //Check for Synchronization Stream (6 bytes of FFh)
+    while (i<6 && incomingPacket[i] == 0xff) {
+      i++;
     }
-    /*int i = 0;
-    for (i=0; i<255; i++) {
-      Serial.printf("UDP packet contents: %x\n", incomingPacket[i]);
-    }
-    Serial.printf("\n");*/
+
+    //If Synchronization Stream detected
+    if (i == 6){
+      uint8_t MAC_array[6];
+      WiFi.macAddress(MAC_array);
+      i = 0;
+      // 16 duplications of MAC address (6 char) = 96 char to iterate 
+      while (i<96 && (char)MAC_array[i%6] == incomingPacket[i+6]) { 
+        i++;        
+      }
+      //Magic packet detected
+      if (i == 96) {
+        Serial.printf("uhhhh, Magic!\n");
+        digitalWrite(led, 1);
+        delay(500);
+        digitalWrite(led, 0);
+      }
+    }    
   }
 
 }
