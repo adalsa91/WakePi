@@ -41,7 +41,7 @@ to your ESP8266.
 That's all, enjoy
 
 ##Bibliography
-[Wake-On-Lan][1]
-[ESP8266 Nodemcu photo][2]
+[Wake-On-Lan(1)](https://wiki.archlinux.org/index.php/Wake-on-LAN)
+[ESP8266 Nodemcu photo(2)](http://www.14core.com/wp-content/uploads/2015/06/Node-MCU-Pin-Out-Diagram1.png)
 [Arduino](https://www.arduino.cc/)
 [Configure Arduino IDE for ESP8266](http://www.instructables.com/id/Quick-Start-to-Nodemcu-ESP8266-on-Arduino-IDE/)
