@@ -14,10 +14,10 @@ We can use it through internet with port forwarding in our router
 ##Usage
 
 Program ESP8266 and connect anything to a digital pin for activate/deactivate this pin.
-See this image to choose the ESP pin with the external pin
+See this image to choose the ESP pin with the external pin [2](http://www.14core.com/wp-content/uploads/2015/06/Node-MCU-Pin-Out-Diagram1.png):
 ![Nodemcu](http://www.14core.com/wp-content/uploads/2015/06/Node-MCU-Pin-Out-Diagram1.png "ESP8266 Nodemcu external pins")
 
-Install **wol** packet and send a magic packet with this command:
+Install **wol** packet and send a magic packet with this command [1](https://wiki.archlinux.org/index.php/Wake-on-LAN):
 
 ```bash
 
@@ -41,7 +41,7 @@ to your ESP8266.
 That's all, enjoy
 
 ##Bibliography
-[Wake-On-Lan]: https://wiki.archlinux.org/index.php/Wake-on-LAN
-[ESP8266 Nodemcu photo]: http://www.14core.com/wp-content/uploads/2015/06/Node-MCU-Pin-Out-Diagram1.png
-[Arduino]: https://www.arduino.cc/
-[Configure Arduino IDE for ESP8266]: http://www.instructables.com/id/Quick-Start-to-Nodemcu-ESP8266-on-Arduino-IDE/
+[Wake-On-Lan][1]
+[ESP8266 Nodemcu photo][2]
+[Arduino](https://www.arduino.cc/)
+[Configure Arduino IDE for ESP8266](http://www.instructables.com/id/Quick-Start-to-Nodemcu-ESP8266-on-Arduino-IDE/)
